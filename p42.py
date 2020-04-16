@@ -1,10 +1,17 @@
 my_list=[]
-for i in range(5):
-    a=float(input('Enter the integer '))
-    while a!=int(a):
-        a=float(input('You did not enter an integer.Enter the integer '))
-    a=int(a)
-    my_list.append(a)
+while len(my_list)<5: #inputting integers
+    a=(input('Enter the integer: '))
+    try:
+        val=int(a)
+        my_list.append(val)
+    except ValueError:
+        try:
+            val=float(a)
+            print('You entered a float. ')
+            pass
+        except ValueError:
+            print('Your did not enter a number. ')
+            pass
 def findmaxvalue(array):
     count_list=[0,0,0,0,0]#List for counting the repetition times for each integer
     for i in range(5):
